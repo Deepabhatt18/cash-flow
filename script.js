@@ -101,7 +101,7 @@ function updateUI() {
     const li = document.createElement("li");
 
     li.innerHTML = `<span>${exp.name} - ${symbol}${exp.amount.toFixed(2)}</span>
-      <button onclick="deleteExpense(${exp.id})">🗑</button>`;
+      <button onclick="deleteExpense(${exp.id})">🗑 Trash</button>`;
     list.appendChild(li);
   });
 
