@@ -82,17 +82,18 @@ function updateUI() {
   balanceEl.innerText = symbol + balance.toFixed(2);
 
   //  10% Alert
-  if (balance <= income * 0.1) {
-    balanceEl.style.color = "#ef4444";
+if (income > 0 && balance <= income * 0.1) {
+  balanceEl.style.color = "#ef4444";
 
-    if (!balanceEl.classList.contains("alert-shown")) {
-      alert("⚠️ Warning: Balance below 10%");
-      balanceEl.classList.add("alert-shown");
-    }
-  } else {
-    balanceEl.style.color = "#22c55e";
-    balanceEl.classList.remove("alert-shown");
+  if (!balanceEl.classList.contains("alert-shown")) {
+    alert("⚠️ Warning: Balance below 10%");
+    balanceEl.classList.add("alert-shown");
   }
+
+} else {
+  balanceEl.style.color = "#22c55e";
+  balanceEl.classList.remove("alert-shown");
+}
 
   //  Expense List
   const list = document.getElementById("expense-list");
