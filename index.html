@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salary & Expense Trackor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section id="header">
+        <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde" alt="user" class="user-icon">
+        <div class="intro">
+            <h3>James Bell</h3>
+            <p>Welcome Back!</p>
+        </div>
+        <h1 class="app-title">Track Your Expenses Easily</h1>
+        <button type="button" id="darkToggle" class="theme-btn">🌙 Dark</button>
+  </section>
+  <section id="cash-flow">
+    <div class="card">
+        <h2>Total Income</h2>
+        <p id="Income">$0</p>
+    </div>
+    <div class="card">
+        <h2>Total Expense</h2>
+        <p id="Expense">$0</p>
+    </div>
+    <div class="card">
+        <h2>Remaining Balance</h2>
+        <p id="Balance">$0</p>
+    </div>
+  </section>
+  <section id="Budget-input">
+    <div class="income-detail">
+        <h3>Enter Income</h3>
+        <select id="currency" onchange="convertCurrency()">
+          <option value="USD">USD ($)</option>
+          <option value="INR">INR (₹)</option>
+          <option value="EUR">EUR (€)</option>
+        </select>
+        <input type="number" id="income-input" placeholder="Enter Your Income">
+        <button type="button" onclick="setIncome()">Set Income</button>
+    </div>
+    <div class="expense-detail">
+        <h3>Add Expense</h3>
+        <input type="text" id="expense-name" placeholder="Enter Expense Name">
+        <input type="number" id="expense-input" placeholder="Enter Expense Amount">
+        <button type="button" onclick="addExpense()">Add Expense</button>
+    </div>
+    <div class="chart-box">
+      <canvas id="myChart"></canvas>
+    </div>
+  </section>
+  <section id="list">
+    <div class="list-header"> 
+     <h3>Expense List</h3>
+     <button type="button" onclick="downloadPDF()">Download Report</button>
+    </div>
+     <ul id="expense-list"></ul>
+  </section>
+ <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</body>
+ <script src="script.js"></script>
+</html>
